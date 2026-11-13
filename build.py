@@ -131,7 +131,7 @@ def nav_html(slug):
                 f'<li><a href="{x[0]}.html">{x[1]}</a></li>' for x in SERVICES)
             out.append(f'<li class="has-sub"><button type="button" class="sub-toggle" aria-expanded="false"{cur(s)}>{t}'
                        f'<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5l5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-                       f'</button><ul class="sub">{subs}</ul></li>')
+                       f'</button><div class="sub"><div class="sub-in"><ul>{subs}</ul></div></div></li>')
         else:
             out.append(f'<li><a href="{s}.html"{cur(s)}>{t}</a></li>')
     out.append('<li class="menu-cta"><a href="contact.html">Contact us</a></li>')
@@ -406,7 +406,6 @@ page("index", "All Sorted Fencing &amp; Landscaping | Dublin",
       <a href="contact.html" class="btn btn-primary">Get my free quote</a>
       <a href="our-work.html" class="btn btn-ghost">See our work</a>
     </div>
-    <nav class="tabs" aria-label="Services">{"".join(f'<a href="{s[0]}.html">{s[1]}</a>' for s in SERVICES)}</nav>
   </div>
 </section>
 <div class="strip"><div class="wrap">
