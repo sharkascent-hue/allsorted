@@ -30,7 +30,7 @@ I_CAL = '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v
 SERVICES = [
     ("fencing", "Fencing", "Timber, composite and PVC fencing and gates on solid concrete or timber posts.", I_FENCE, "fence-3.jpg",
      "Timber, composite and PVC fencing and gates, supplied and fitted across Dublin.", None, None, None),
-    ("landscaping", "Landscaping", "New lawns, planting, gravel and full garden makeovers from the ground up.", I_PLANT, "fence-6.jpg",
+    ("landscaping", "Landscaping", "New lawns, planting, gravel and full garden makeovers from the ground up.", I_PLANT, "land-2.jpg",
      "New lawns, planting, gravel and full garden makeovers — designed around how you use the space.",
      "A garden you will<br>actually use.",
      [(I_GRASS, "Lawns &amp; turfing", "New roll-out lawns, levelling and reseeding to bring tired, patchy grass back to life."),
@@ -41,8 +41,8 @@ SERVICES = [
       (I_BIN, "Clearance &amp; levelling", "Old sheds, rubble and overgrowth removed, and the ground graded ready for what comes next.")],
      ("One project", "Fence and garden done together.",
       ["Ground levelled and drained before anything is laid", "One plan, one crew and one clean-up", "All waste taken away when we finish"],
-      "fence-6.jpg", "Green composite fence beside a new lawn")),
-    ("paving", "Paving", "Patios, driveways and paths laid on a proper base with clean edges.", I_PAVE, "fence-5.jpg",
+      "land-1.jpg", "Gravel front garden with a curved path")),
+    ("paving", "Paving", "Patios, driveways and paths laid on a proper base with clean edges.", I_PAVE, "pave-1.jpg",
      "Patios, driveways and paths laid on a proper base, with clean edges and good drainage.",
      "Paving that stays<br>flat and drains.",
      [(I_PAVE, "Patios", "Porcelain, sandstone, limestone and concrete slabs, laid to a fall so water runs away from the house."),
@@ -53,20 +53,20 @@ SERVICES = [
       (I_BRUSH, "Repairs &amp; relaying", "Sunken or rocking slabs lifted and relaid, and tired joints re-pointed.")],
      ("Done right", "It is all in the base.",
       ["Dug out and filled with compacted hardcore", "Laid to a fall, away from the house", "Finished level kept below the damp-proof course", "Joints pointed or sanded and the area washed down"],
-      "fence-5.jpg", "Patterned patio beside a grey composite fence")),
-    ("painting", "Painting", "Exterior painting for houses, walls, fences, sheds and gates.", I_PAINT, "fence-8.jpg",
-     "Exterior painting for houses, garden walls, fences, sheds and gates — properly prepared so it lasts.",
+      "pave-1.jpg", "Tarmac driveway with granite edging")),
+    ("painting", "Painting", "Interior and exterior painting for homes, walls, fences, sheds and gates.", I_PAINT, "paint-1.jpg",
+     "Interior and exterior painting — rooms, stairs, kitchens, house fronts, walls and fences — properly prepared so it lasts.",
      "A fresh coat,<br>properly prepared.",
      [(I_HOME, "House exteriors", "Render, dash and masonry washed, repaired and painted with weather-resistant masonry paint."),
-      (I_LAYERS, "Garden walls", "Boundary and garden walls cleaned down and painted to match or freshen up the house."),
+      (I_LAYERS, "Interior rooms", "Walls, ceilings, woodwork, stairs and doors painted with clean lines and a smooth finish."),
       (I_FENCE, "Fences &amp; sheds", "Timber fences, sheds and decking stained or painted to protect them and tidy up the garden."),
       (I_PAINT, "Gates &amp; railings", "Metal and timber gates and railings rubbed down, primed and finished."),
       (I_BRUSH, "Preparation", "Scraping, filling, sanding and priming — the part that decides how long the paint lasts."),
       (I_SPARK, "Clean finish", "Windows, paths and plants covered while we work, and everything cleaned up after.")],
      ("How we paint", "Prep first, paint second.",
       ["Surfaces washed and left to dry fully", "Flaking paint removed, cracks filled", "Primer or stabiliser where it is needed", "Two full coats in dry weather"],
-      "fence-8.jpg", "White PVC fence with lattice top")),
-    ("exterior-cleaning", "Exterior Cleaning", "Power washing for driveways, patios, walls, decking and paths.", I_DROP, "fence-4.jpg",
+      "paint-5.jpg", "Kitchen painted in teal")),
+    ("exterior-cleaning", "Exterior Cleaning", "Power washing for driveways, patios, roofs, walls and decking.", I_DROP, "clean-1.jpg",
      "Power washing for driveways, patios, walls, decking and paths, to lift years of moss and grime.",
      "Looks new again,<br>without replacing it.",
      [(I_ROAD, "Driveways", "Oil marks, tyre tracks, moss and weeds lifted from tarmac, concrete and block paving."),
@@ -74,11 +74,11 @@ SERVICES = [
       (I_HOME, "Walls &amp; render", "House and garden walls cleaned at the right pressure so the surface is not damaged."),
       (I_FENCE, "Decking &amp; fences", "Timber cleaned gently and left ready for staining or treatment."),
       (I_LAYERS, "Re-sanding", "Block paving joints re-sanded after cleaning so the blocks stay locked in place."),
-      (I_SPARK, "Regular cleans", "A yearly visit keeps moss and algae from taking hold again.")],
+      (I_SPARK, "Roof cleaning", "Moss and dirt cleared from roof tiles and ridge lines.")],
      ("Careful work", "The right pressure for each surface.",
       ["Lower pressure on render, pointing and timber", "Drains and gullies kept clear of debris", "Doors, windows and cars rinsed down after", "Advice on sealing or treating once it is clean"],
-      "fence-4.jpg", "Cream PVC fence with lattice top")),
-    ("garden-care", "Garden Care", "Grass cutting, hedge trimming, weeding and seasonal tidy-ups.", I_SHEARS, "fence-2.jpg",
+      "clean-3.jpg", "Roof tiles after cleaning")),
+    ("garden-care", "Garden Care", "Grass cutting, hedge trimming, weeding and seasonal tidy-ups.", I_SHEARS, "care-1.jpg",
      "Grass cutting, hedge trimming, weeding and seasonal tidy-ups — one-off or on a regular visit.",
      "Kept tidy,<br>all year round.",
      [(I_GRASS, "Grass cutting", "Lawns mown and edged, with cuttings taken away."),
@@ -89,7 +89,7 @@ SERVICES = [
       (I_BIN, "Green waste removal", "Everything we cut is bagged and taken away with us.")],
      ("No hassle", "You do not have to be home.",
       ["Same day and time agreed in advance", "Gates closed and the garden left tidy", "One-off clear-outs for overgrown gardens", "Happy to look after rental and commercial sites"],
-      "fence-2.jpg", "Timber fence along a row of houses")),
+      "care-1.jpg", "Boundary hedge trimmed")),
 ]
 SVC = {s[0]: s for s in SERVICES}
 
@@ -229,23 +229,35 @@ FENCE_CARDS = '<div class="grid3">' + "".join([
          "Clean, bright PVC privacy fencing with lattice tops and matching side gates that wipe clean."),
 ]) + '</div>'
 
-PHOTOS = [
-    ("fence-2.jpg", "Wave-top timber fence along a new housing estate", "Wave-top timber fence"),
-    ("fence-6.jpg", "Green slatted composite fence beside a lawn", "Green slatted composite"),
-    ("fence-9.jpg", "Wood-effect composite fence in a corner garden", "Wood-effect composite"),
-    ("fence-4.jpg", "Cream PVC fence with lattice top", "Cream PVC with lattice top"),
-    ("fence-7.jpg", "Beige PVC privacy gate with lattice top", "Beige PVC privacy gate"),
-    ("fence-1.jpg", "Arched lattice timber fence panels", "Arched lattice timber"),
-    ("fence-5.jpg", "Grey composite fence beside a patio", "Grey composite &amp; patio"),
-    ("fence-3.jpg", "Horizontal timber panel fence", "Horizontal timber panels"),
-    ("fence-8.jpg", "White PVC fence with lattice top", "White PVC with lattice top"),
-]
+CATS = [("fencing", "Fencing"), ("painting", "Painting"), ("cleaning", "Exterior Cleaning"),
+        ("paving", "Paving"), ("landscaping", "Landscaping"), ("care", "Garden Care")]
+_P = {
+    "fencing": [("fence-2.jpg", "Wave-top timber fence"), ("fence-6.jpg", "Green slatted composite fence"), ("fence-9.jpg", "Wood-effect composite fence"),
+                ("fence-4.jpg", "Cream PVC fence with lattice top"), ("fence-7.jpg", "Beige PVC privacy gate"), ("fence-1.jpg", "Arched lattice timber fence"),
+                ("fence-5.jpg", "Grey composite fence and patio"), ("fence-3.jpg", "Horizontal timber panel fence"), ("fence-8.jpg", "White PVC fence with lattice top")],
+    "painting": [("paint-1.jpg", "Exterior house painting"), ("paint-5.jpg", "Kitchen painted in teal"), ("paint-2.jpg", "Room painted in warm grey"),
+                 ("paint-7.jpg", "Staircase in black satin"), ("paint-4.jpg", "Navy feature room"), ("paint-6.jpg", "Kitchen walls and ceiling"),
+                 ("paint-3.jpg", "Painted room with new flooring"), ("paint-8.jpg", "Hall, stairs and landing"), ("paint-9.jpg", "Landing and doors"), ("paint-10.jpg", "Bathroom painting")],
+    "cleaning": [("clean-1.jpg", "Block paving driveway cleaned"), ("clean-3.jpg", "Roof tiles cleaned"), ("clean-8.jpg", "Driveway and roof cleaned"),
+                 ("clean-5.jpg", "House exterior wash"), ("clean-4.jpg", "Ridge and roof cleaned"), ("clean-7.jpg", "Roof after cleaning"),
+                 ("clean-6.jpg", "Roof and walls cleaned"), ("clean-2.jpg", "Roof cleaning in progress"), ("clean-9.jpg", "Tarmac driveway washed")],
+    "paving": [("pave-1.jpg", "Tarmac driveway with granite edging"), ("pave-2.jpg", "Block-paved driveway")],
+    "landscaping": [("land-2.jpg", "New lawn and paved patio"), ("land-1.jpg", "Gravel front garden with curved path")],
+    "care": [("care-1.jpg", "Boundary hedge trimmed"), ("care-2.jpg", "Tree pruned and reduced"), ("care-3.jpg", "Tree cut back")],
+}
+# mixed order for the "All" view: one from each category in turn
+PHOTOS = [(f, c, cat) for i in range(max(map(len, _P.values()))) for cat, _ in CATS for f, c in _P[cat][i:i + 1]]
+HOME_PHOTOS = [(f, c, cat) for cat in ("fencing", "painting", "cleaning", "paving", "landscaping") for f, c in _P[cat][:1]]
 
 
 def gallery(items, cls=""):
     return f'<div class="gallery {cls} reveal" data-gallery>' + "".join(
-        f'<button type="button"><img src="img/{f}" alt="{a}" loading="lazy"><span>{c}</span></button>'
-        for f, a, c in items) + '</div>'
+        f'<button type="button" data-cat="{cat}"><img src="img/{f}" alt="{c}" loading="lazy"><span>{c}</span></button>'
+        for f, c, cat in items) + '</div>'
+
+
+FILTERS = ('<div class="filters reveal" role="group" aria-label="Filter photos"><button type="button" class="on" data-filter="all">All</button>'
+           + "".join(f'<button type="button" data-filter="{k}">{n}</button>' for k, n in CATS) + '</div>')
 
 
 STEPS = '''<div class="steps">
@@ -274,7 +286,7 @@ POSTS = [
 <ul><li><strong>Good for:</strong> a tidy, uniform look and easy cleaning.</li><li><strong>Watch out for:</strong> fewer colour choices, and lighter colours show dirt sooner.</li></ul>
 <h2>Still not sure?</h2>
 <p>The quickest way to decide is to see the materials side by side. We bring samples on every site visit, so you can hold them up against your own house and garden before choosing.</p>''', "fencing"),
-    ("blog-choosing-patio-paving", "fence-5.jpg", "Paving",
+    ("blog-choosing-patio-paving", "pave-1.jpg", "Paving",
      "Porcelain, sandstone or concrete: choosing patio paving",
      "What each type of patio slab is like to live with, and why the base matters more than the slab.",
      '''<p>The slab you pick decides how a patio looks. The base underneath decides how long it stays looking that way. Here is a plain guide to both.</p>
@@ -289,7 +301,7 @@ POSTS = [
 <ul><li><strong>Watch out for:</strong> colour can fade over time in strong sun and weather.</li></ul>
 <h2>The part you do not see</h2>
 <p>Whatever slab you choose, it needs a dug-out, compacted hardcore base, a slight fall so rain runs away from the house, and a finished level that sits below the damp-proof course. Skipping any of these is how patios end up sinking, rocking or holding puddles.</p>''', "paving"),
-    ("blog-painting-house-exterior", "fence-8.jpg", "Painting",
+    ("blog-painting-house-exterior", "paint-1.jpg", "Painting",
      "When is the best time to paint the outside of a house in Ireland?",
      "Picking the right weather window, and the preparation that makes exterior paint last.",
      '''<p>Exterior paint fails early for two reasons: it went on in the wrong weather, or it went on over a surface that was not ready. Both are avoidable.</p>
@@ -301,7 +313,7 @@ POSTS = [
 <p>Walls should be washed down to remove dirt, moss and algae, then left to dry. Flaking paint is scraped back, cracks are filled, and chalky or bare patches get a stabilising primer. Only then do two full coats of masonry paint go on.</p>
 <h2>How long should it last?</h2>
 <p>That depends on the paint, the wall and how exposed the house is, but good preparation and a quality masonry paint will always outlast a quick coat over a dirty wall.</p>''', "painting"),
-    ("blog-power-washing-guide", "fence-4.jpg", "Exterior Cleaning",
+    ("blog-power-washing-guide", "clean-1.jpg", "Exterior Cleaning",
      "Power washing: what it can and cannot fix",
      "Where power washing works well, where it can do damage, and how to keep surfaces clean for longer.",
      '''<p>Power washing is one of the quickest ways to make a property look cared for again. Used on the wrong surface or at the wrong pressure, it can also cause damage. Here is what to know.</p>
@@ -314,7 +326,7 @@ POSTS = [
 <p>Block paving should have its joints re-sanded once dry, as washing removes the sand that locks the blocks together. Timber is best treated or stained soon after cleaning, while it is bare and clean.</p>
 <h2>Keeping it clean</h2>
 <p>Moss and algae come back fastest in shade and where water sits. A light clean once a year is easier on the surface than a heavy clean every five.</p>''', "exterior-cleaning"),
-    ("blog-garden-care-calendar", "fence-2.jpg", "Garden Care",
+    ("blog-garden-care-calendar", "care-1.jpg", "Garden Care",
      "A simple garden care calendar for Irish gardens",
      "What to do in each season to keep a garden tidy without it taking over your weekends.",
      '''<p>Most gardens only need a handful of jobs done at the right time. This is the rough calendar we work to.</p>
@@ -327,7 +339,7 @@ POSTS = [
 <h2>Winter</h2>
 <ul><li>Prune dormant shrubs and trees where needed</li><li>Check fences, gates and posts after storms</li><li>Plan any bigger landscaping work for the year ahead</li></ul>
 <p>If you would rather not think about any of it, a regular visit through the growing season covers the lot.</p>''', "garden-care"),
-    ("blog-low-maintenance-garden", "fence-6.jpg", "Landscaping",
+    ("blog-low-maintenance-garden", "land-2.jpg", "Landscaping",
      "Five ways to make a garden lower maintenance",
      "Design choices that cut down the weekly work without turning the garden into a car park.",
      '''<p>A low-maintenance garden is not one with nothing in it. It is one where the jobs that eat your time have been designed out.</p>
@@ -421,7 +433,7 @@ page("index", "All Sorted Fencing &amp; Landscaping | Dublin",
 </div></section>
 <section><div class="wrap">
   {head("Our work", "Recent jobs.", "", ("our-work.html", "View the gallery"))}
-  {gallery(PHOTOS[:5], "four")}
+  {gallery(HOME_PHOTOS, "four")}
 </div></section>
 <section class="process"><div class="wrap">
   {head("From the blog", "Advice before you buy.", "", ("blog.html", "All articles"))}
@@ -479,9 +491,9 @@ for slug, name, short, icon, img, lead, h2, items, sp in SERVICES:
 
 # ── Our work ────────────────────────────────────────────────────
 page("our-work", "Our Work | All Sorted Fencing &amp; Landscaping",
-     "Photos of recent fencing and garden jobs.",
+     "Photos of recent fencing, painting, cleaning, paving and garden jobs.",
      page_hero("Our Work", "A look at some recent jobs. Tap any photo to see it full size.", "fence-2.jpg") + f'''
-<section><div class="wrap">{gallery(PHOTOS)}</div></section>''')
+<section><div class="wrap">{FILTERS}{gallery(PHOTOS, "even")}</div></section>''')
 
 # ── Process ─────────────────────────────────────────────────────
 page("process", "How It Works | All Sorted Fencing &amp; Landscaping",
@@ -512,7 +524,7 @@ page("about", "About Us | All Sorted Fencing &amp; Landscaping",
      "All Sorted Fencing &amp; Landscaping is a Dublin-based team looking after fences, gardens and the outside of homes across the city and county.",
      page_hero("About Us", "A Dublin team that looks after fences, gardens and the outside of your home the way we would want our own done.", "fence-3.jpg") +
      split("Who we are", "Local, hands-on and easy to deal with.", [], "fence-9.jpg", "Wood-effect composite fence in a garden", flip=True,
-           lead="All Sorted Fencing &amp; Landscaping is a Dublin-based company. We fit fencing, build and look after gardens, lay paving, paint exteriors and power wash — so one call covers everything outside your front door.</p><p class=\"lead\">The name says how we like to leave a job: finished, tidy and with nothing left for you to chase up.") + f'''
+           lead="All Sorted Fencing &amp; Landscaping is a Dublin-based company. We fit fencing, build and look after gardens, lay paving, paint inside and out and power wash — so one call covers everything outside your front door.</p><p class=\"lead\">The name says how we like to leave a job: finished, tidy and with nothing left for you to chase up.") + f'''
 <section class="process"><div class="wrap">
   <div class="head reveal"><div><span class="eyebrow">How we work</span><h2>What you can count on.</h2></div></div>
   <div class="grid3">

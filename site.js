@@ -46,6 +46,13 @@ document.addEventListener('click', e => {
 });
 addEventListener('pageshow', e => { if (e.persisted) { root.classList.remove('leaving', 'first'); root.classList.add('quick'); } });
 
+// Gallery filter
+document.querySelectorAll('.filters button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.filters button').forEach(x => x.classList.toggle('on', x === b));
+  const f = b.dataset.filter;
+  document.querySelectorAll('.gallery.even button').forEach(t => { t.hidden = f !== 'all' && t.dataset.cat !== f; });
+}));
+
 // Gallery lightbox
 const lb = document.getElementById('lightbox');
 document.querySelectorAll('[data-gallery] button').forEach(b => b.addEventListener('click', () => {
