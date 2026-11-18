@@ -204,10 +204,28 @@ def tiles(items):
         f'<div class="tile reveal">{svg(d)}<h3>{h}</h3><p>{p}</p></div>' for d, h, p in items) + '</div>'
 
 
+COVER = {"fencing": "fence-10.jpg", "landscaping": "land-6.jpg", "paving": "pave-3.jpg",
+         "painting": "paint-1.jpg", "exterior-cleaning": "clean-1.jpg", "garden-care": "care-1.jpg"}
+# one photo per tile on each service page, in the same order as the tiles
+TILE_IMG = {
+    "landscaping": ["land-8.jpg", "land-11.jpg", "land-1.jpg", "land-10.jpg", "land-6.jpg", "land-3.jpg"],
+    "paving": ["pave-3.jpg", "pave-8.jpg", "pave-5.jpg", "pave-1.jpg", "pave-6.jpg", "pave-4.jpg"],
+    "painting": ["paint-1.jpg", "paint-2.jpg", "fence-11.jpg", "paint-7.jpg", "paint-9.jpg", "paint-5.jpg"],
+    "exterior-cleaning": ["clean-1.jpg", "clean-9.jpg", "clean-5.jpg", "clean-6.jpg", "clean-8.jpg", "clean-3.jpg"],
+    "garden-care": ["land-8.jpg", "care-1.jpg", "land-11.jpg", "land-9.jpg", "care-2.jpg", "care-3.jpg"],
+}
+
+
 def svc_grid(exclude=None):
     return '<div class="grid3">' + "".join(
-        f'<a class="box svc reveal" href="{s[0]}.html">{svg(s[3])}<h3>{s[1]}</h3><p>{s[2]}</p><span class="more">Learn more →</span></a>'
+        f'<a class="card post svc-card reveal" href="{s[0]}.html"><figure><img src="img/{COVER[s[0]]}" alt="{s[1]}" loading="lazy"></figure>'
+        f'<div><h3>{s[1]}</h3><p>{s[2]}</p><span class="more">Learn more →</span></div></a>'
         for s in SERVICES if s[0] != exclude) + '</div>'
+
+
+def photo_tiles(slug, items):
+    return '<div class="grid3">' + "".join(
+        card(img, h.replace("&amp;", "and"), h, p) for img, (d, h, p) in zip(TILE_IMG[slug], items)) + '</div>'
 
 
 def split(eyebrow, h2, ticks, img, alt, lead="", flip=False):
@@ -490,9 +508,9 @@ for slug, name, short, icon, img, lead, h2, items, sp in SERVICES:
             if related else "")
     page(slug, f"{name} in Dublin | All Sorted Fencing &amp; Landscaping", f"{short} Free quotes across Dublin.",
          page_hero(name, lead, img, crumb=f'<a href="services.html">Services</a> / {name}') + f'''
-<section class="land"><div class="wrap">
+<section><div class="wrap">
   {head(name, h2, short)}
-  {tiles(items)}
+  {photo_tiles(slug, items)}
   {blog}
 </div></section>
 {split(sp[0], sp[1], sp[2], sp[3], sp[4])}
