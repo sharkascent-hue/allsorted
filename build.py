@@ -178,7 +178,7 @@ def page(slug, title, desc, body, cta=True):
   <div class="wrap">
     <a href="index.html" class="brand foot"><img src="img/logo.png" alt="{NAME}" width="700" height="201" loading="lazy"></a>
     <nav aria-label="Footer">{foot}</nav>
-    <p class="copy">© <span id="yr"></span> {NAME} · Dublin, Ireland</p>
+    <p class="copy">© <span id="yr"></span> {NAME} · Dublin, Ireland · <a href="https://almlabmarketing.com" target="_blank" rel="noopener">Website by AlmLab</a></p>
   </div>
 </footer>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
