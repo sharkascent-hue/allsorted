@@ -75,7 +75,12 @@
     <p class="copy">© <span id="yr"></span> All Sorted Fencing &amp; Landscaping · Dublin, Ireland</p>
   </div>
 </footer>
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer"><img alt=""><p></p></div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button type="button" class="lb-close" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button type="button" class="lb-nav lb-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <figure class="lb-stage"><img alt=""><figcaption><span class="lb-cap"></span><span class="lb-count"></span></figcaption></figure>
+  <button type="button" class="lb-nav lb-next" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+</div>
 <script src="site.js"></script>
 </body>
 </html>

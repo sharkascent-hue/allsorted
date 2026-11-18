@@ -398,3 +398,34 @@ html.first .slats i{background-image:none}
 .card div,.box{border-top-color:var(--emerald)}
 .eyebrow{color:var(--emerald)}
 .land .eyebrow,.contact .eyebrow{color:var(--tangerine)}
+
+/* v7: photo viewer with previous / next */
+html.lb-open{overflow:hidden}
+.lightbox,.lightbox.open{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:18px;padding:28px clamp(16px,3vw,40px);cursor:default;background:rgba(30,15,6,.95);backdrop-filter:blur(6px);opacity:0;transition:opacity .25s ease}
+.lightbox.open{opacity:1}
+.lightbox[hidden]{display:none}
+.lb-stage{margin:0;height:100%;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+.lightbox .lb-stage img{max-width:100%;max-height:calc(100vh - 140px);max-height:calc(100dvh - 140px);width:auto;height:auto;object-fit:contain;border-radius:14px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7);transform:scale(.97);transition:transform .3s ease}
+.lightbox.open .lb-stage img{transform:none}
+.lb-stage img.slide-l{animation:lbL .32s cubic-bezier(.2,.7,.2,1)}
+.lb-stage img.slide-r{animation:lbR .32s cubic-bezier(.2,.7,.2,1)}
+@keyframes lbL{from{opacity:0;transform:translateX(40px)}}
+@keyframes lbR{from{opacity:0;transform:translateX(-40px)}}
+.lightbox figcaption{display:flex;gap:16px;align-items:center;color:#fff;font-size:1rem;text-align:center}
+.lb-count{color:var(--tangerine);font-size:.9rem;letter-spacing:.08em}
+.lightbox p{display:none}
+.lb-nav,.lb-close{display:grid;place-items:center;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.1);color:#fff;border-radius:50%;cursor:pointer;transition:background .2s,color .2s,transform .2s,border-color .2s}
+.lb-nav{width:60px;height:60px}
+.lb-nav[hidden]{visibility:hidden;display:grid}
+.lb-nav svg,.lb-close svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.lb-nav:hover,.lb-close:hover{background:var(--tangerine);border-color:var(--tangerine);color:#2A1602}
+.lb-prev:hover{transform:translateX(-3px)}.lb-next:hover{transform:translateX(3px)}
+.lb-close{position:absolute;top:18px;right:18px;width:48px;height:48px;z-index:2}
+@media (max-width:700px){
+  .lightbox,.lightbox.open{grid-template-columns:1fr;padding:70px 12px 96px}
+  .lb-stage{grid-column:1}
+  .lightbox .lb-stage img{max-height:calc(100dvh - 210px)}
+  .lb-nav{position:absolute;bottom:22px;width:56px;height:56px}
+  .lb-prev{left:calc(50% - 72px)}.lb-next{right:calc(50% - 72px)}
+  .lb-close{top:14px;right:14px}
+}
