@@ -148,7 +148,7 @@ def page(slug, title, desc, body, cta=True):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<meta name="theme-color" content="#0F5C45">
+<meta name="theme-color" content="#7B4321">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/icon-180.png">
 <script>try{{document.documentElement.classList.add(sessionStorage.getItem('as-seen')?'quick':'first');sessionStorage.setItem('as-seen','1')}}catch(e){{}}</script>
@@ -232,7 +232,8 @@ FENCE_CARDS = '<div class="grid3">' + "".join([
 CATS = [("fencing", "Fencing"), ("painting", "Painting"), ("cleaning", "Exterior Cleaning"),
         ("paving", "Paving"), ("landscaping", "Landscaping"), ("care", "Garden Care")]
 _P = {
-    "fencing": [("fence-2.jpg", "Wave-top timber fence"), ("fence-6.jpg", "Green slatted composite fence"), ("fence-9.jpg", "Wood-effect composite fence"),
+    "fencing": [("fence-10.jpg", "Slatted cedar fencing with built-in seating"), ("fence-11.jpg", "Black horizontal slatted fence"), ("fence-12.jpg", "Dark fence panels with timber posts"), ("fence-13.jpg", "Closeboard timber fence"), ("fence-14.jpg", "Featheredge timber fence"),
+                ("fence-2.jpg", "Wave-top timber fence"), ("fence-6.jpg", "Green slatted composite fence"), ("fence-9.jpg", "Wood-effect composite fence"),
                 ("fence-4.jpg", "Cream PVC fence with lattice top"), ("fence-7.jpg", "Beige PVC privacy gate"), ("fence-1.jpg", "Arched lattice timber fence"),
                 ("fence-5.jpg", "Grey composite fence and patio"), ("fence-3.jpg", "Horizontal timber panel fence"), ("fence-8.jpg", "White PVC fence with lattice top")],
     "painting": [("paint-1.jpg", "Exterior house painting"), ("paint-5.jpg", "Kitchen painted in teal"), ("paint-2.jpg", "Room painted in warm grey"),
@@ -241,8 +242,10 @@ _P = {
     "cleaning": [("clean-1.jpg", "Block paving driveway cleaned"), ("clean-3.jpg", "Roof tiles cleaned"), ("clean-8.jpg", "Driveway and roof cleaned"),
                  ("clean-5.jpg", "House exterior wash"), ("clean-4.jpg", "Ridge and roof cleaned"), ("clean-7.jpg", "Roof after cleaning"),
                  ("clean-6.jpg", "Roof and walls cleaned"), ("clean-2.jpg", "Roof cleaning in progress"), ("clean-9.jpg", "Tarmac driveway washed")],
-    "paving": [("pave-1.jpg", "Tarmac driveway with granite edging"), ("pave-2.jpg", "Block-paved driveway")],
-    "landscaping": [("land-2.jpg", "New lawn and paved patio"), ("land-1.jpg", "Gravel front garden with curved path")],
+    "paving": [("pave-3.jpg", "Grey porcelain patio with slatted fence"), ("pave-4.jpg", "Porcelain patio and lawn"), ("pave-5.jpg", "Sandstone patio and steps"), ("pave-6.jpg", "Porcelain patio with drainage channel"), ("pave-7.jpg", "Patio and lawn with painted fence"), ("pave-8.jpg", "Charcoal block driveway"), ("pave-9.jpg", "Block-paved driveway and garage"), ("pave-10.jpg", "Gravel driveway with cobble border"), ("pave-11.jpg", "Gravel driveway with granite path"), ("pave-12.jpg", "Tarmac driveway with brick edging"),
+                ("pave-1.jpg", "Tarmac driveway with granite edging"), ("pave-2.jpg", "Block-paved driveway")],
+    "landscaping": [("land-3.jpg", "Porcelain patio, lawn and slatted fencing"), ("land-4.jpg", "Decking, lawn and feature wall"), ("land-5.jpg", "Patio, lawn and raised beds"), ("land-6.jpg", "Garden makeover with lighting"), ("land-7.jpg", "Sandstone patio and planting"), ("land-8.jpg", "Rear garden patio and lawn"), ("land-9.jpg", "Lawn and patio with new fencing"), ("land-10.jpg", "Artificial lawn with sleeper planters"), ("land-11.jpg", "Courtyard garden with planting"),
+                ("land-2.jpg", "New lawn and paved patio"), ("land-1.jpg", "Gravel front garden with curved path")],
     "care": [("care-1.jpg", "Boundary hedge trimmed"), ("care-2.jpg", "Tree pruned and reduced"), ("care-3.jpg", "Tree cut back")],
 }
 # mixed order for the "All" view: one from each category in turn
@@ -408,7 +411,8 @@ FORM = '''<form id="form" class="reveal">
 page("index", "All Sorted Fencing &amp; Landscaping | Dublin",
      "Dublin-based fencing, landscaping, paving, painting, exterior cleaning and garden care. Free quotes across Dublin.",
      f'''<section class="hero">
-  <video class="hero-bg" autoplay muted loop playsinline preload="metadata" poster="img/hero-poster.jpg" aria-label="Fences fitted by All Sorted"><source src="img/hero.mp4" type="video/mp4"></video>
+  <video class="hero-bg" id="heroVideo" autoplay muted loop playsinline preload="none" aria-label="Fencing and paving by All Sorted"></video>
+  <script>(function(){{var v=document.getElementById('heroVideo'),t=matchMedia('(max-width:760px) and (orientation:portrait)').matches?'tall':'wide';v.poster='img/hero-'+t+'.jpg';v.src='img/hero-'+t+'.mp4';}})();</script>
   <div class="chip l"><b>Dublin</b><span>based &amp; local</span></div>
   <div class="chip r"><b>Free</b><span>no-obligation quotes</span></div>
   <div class="wrap">
