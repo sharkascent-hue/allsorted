@@ -178,8 +178,9 @@ def page(slug, title, desc, body, cta=True):
   <div class="wrap">
     <a href="index.html" class="brand foot"><img src="img/logo.png" alt="{NAME}" width="700" height="201" loading="lazy"></a>
     <nav aria-label="Footer">{foot}</nav>
-    <p class="copy">© <span id="yr"></span> {NAME} · Dublin, Ireland · <a href="https://almlabmarketing.com" target="_blank" rel="noopener">Website by AlmLab</a></p>
+    <p class="copy">© <span id="yr"></span> {NAME} · Dublin, Ireland</p>
   </div>
+<div class="almlab-credit-row" style="display:flex;justify-content:flex-end;padding:16px 24px 18px"><a class="almlab-credit" href="https://almlabmarketing.com" target="_blank" rel="noopener" style="color:#5dff7f;font-weight:600;font-size:13px;letter-spacing:.03em;text-decoration:none;white-space:nowrap;text-shadow:0 0 4px rgba(93,255,127,.95),0 0 10px rgba(57,255,106,.6),0 0 22px rgba(57,255,106,.35)">Website by AlmLab</a></div>
 </footer>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
   <button type="button" class="lb-close" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
