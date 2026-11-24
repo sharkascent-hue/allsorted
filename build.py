@@ -4,6 +4,10 @@ import pathlib
 
 OUT = pathlib.Path(__file__).parent
 NAME = "All Sorted Fencing &amp; Landscaping"
+PHONE = "+353 87 497 2416"
+PHONE_TEL = "+353874972416"
+EMAIL = "allsortedfencingandlandscaping@gmail.com"
+WEB3FORMS_KEY = "14b0920f-0117-43f0-a08e-fb037efb93c7"  # public form key from web3forms.com, safe to publish
 
 
 def svg(d):
@@ -112,10 +116,10 @@ def page_hero(title, lead, img, crumb=None):
 </section>'''
 
 
-CTA = '''<section class="cta">
+CTA = f'''<section class="cta">
   <div class="wrap">
     <div><h2>Ready to get it sorted?</h2><p>Free site visit and a clear written quote, anywhere in Dublin.</p></div>
-    <a href="contact.html" class="btn btn-primary">Get my free quote</a>
+    <div class="cta-btns"><a href="tel:{PHONE_TEL}" class="btn btn-ghost">Call {PHONE}</a><a href="contact.html" class="btn btn-primary">Get my free quote</a></div>
   </div>
 </section>'''
 
@@ -178,7 +182,8 @@ def page(slug, title, desc, body, cta=True):
   <div class="wrap">
     <a href="index.html" class="brand foot"><img src="img/logo.png" alt="{NAME}" width="700" height="201" loading="lazy"></a>
     <nav aria-label="Footer">{foot}</nav>
-    <p class="copy">© <span id="yr"></span> {NAME} · Dublin, Ireland</p>
+    <p class="foot-contact"><a href="tel:{PHONE_TEL}">{PHONE}</a><a href="mailto:{EMAIL}">{EMAIL}</a><span>Dublin, Ireland</span></p>
+    <p class="copy">© <span id="yr"></span> {NAME}</p>
   </div>
 <div class="almlab-credit-row" style="display:flex;justify-content:center;padding:12px 16px 4px"><a class="almlab-credit" href="https://almlabmarketing.com" target="_blank" rel="noopener" aria-label="Website by AlmLab" style="display:inline-flex;align-items:center;gap:3px;color:rgba(255,255,255,.55);font-size:11px;letter-spacing:.06em;line-height:1;text-decoration:none;white-space:nowrap"><span>Website by</span><img src="https://almlabmarketing.com/almlab-credit.png" alt="AlmLab" width="74" height="28" loading="lazy" style="height:28px;width:auto;display:block"></a></div>
 </footer>
@@ -414,22 +419,41 @@ def post_cards(posts):
         for p in posts) + '</div>'
 
 
-FORM = '''<form id="form" class="reveal">
+FORM = f'''<form id="form" class="reveal" action="https://api.web3forms.com/submit" method="POST">
   <h3>Request a quote</h3>
+  <input type="hidden" name="access_key" value="{WEB3FORMS_KEY}">
+  <input type="hidden" name="subject" value="New quote request – All Sorted website">
+  <input type="hidden" name="from_name" value="All Sorted website">
+  <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <label>Name<input name="name" required autocomplete="name"></label>
   <div class="row">
-    <label>Name<input name="name" required autocomplete="name"></label>
     <label>Phone<input name="phone" type="tel" required autocomplete="tel"></label>
+    <label>Email<input name="email" type="email" required autocomplete="email"></label>
   </div>
   <div class="row">
     <label>Area / Eircode<input name="area" autocomplete="postal-code"></label>
     <label>Service
-      <select name="service">''' + "".join(f"<option>{s[1]}</option>" for s in SERVICES) + '''<option>Something else</option></select>
+      <select name="service">{"".join(f"<option>{x[1]}</option>" for x in SERVICES)}<option>Something else</option></select>
     </label>
   </div>
-  <label>Tell us about the job<textarea name="message" placeholder="What you need done, rough sizes, anything we should know…"></textarea></label>
+  <label>Tell us about the job<textarea name="message" required placeholder="What you need done, rough sizes, anything we should know…"></textarea></label>
   <button class="btn btn-primary" type="submit">Send my request</button>
-  <small>Opens your email app with the details filled in.</small>
+  <p class="form-status" role="status" aria-live="polite"></p>
+  <small>We usually reply within one working day.</small>
 </form>'''
+
+CONTACT = f'''<section class="contact"><div class="wrap">
+  <div class="reveal">
+    <span class="eyebrow">Free quote</span>
+    <h2>Let's get it sorted.</h2>
+    <dl>
+      <div><dt>Phone</dt><dd><a href="tel:{PHONE_TEL}">{PHONE}</a></dd></div>
+      <div><dt>Email</dt><dd><a class="email" href="mailto:{EMAIL}">{EMAIL}</a></dd></div>
+      <div><dt>Based in</dt><dd>Dublin, Ireland</dd></div>
+    </dl>
+  </div>
+  {FORM}
+</div></section>'''
 
 # ── Home ────────────────────────────────────────────────────────
 page("index", "All Sorted Fencing &amp; Landscaping | Dublin",
@@ -466,7 +490,9 @@ page("index", "All Sorted Fencing &amp; Landscaping | Dublin",
 <section class="process"><div class="wrap">
   {head("From the blog", "Advice before you buy.", "", ("blog.html", "All articles"))}
   {post_cards(POSTS[:3])}
-</div></section>''')
+</div></section>
+<div id="quote"></div>
+{CONTACT}''', cta=False)
 
 # ── Services overview ───────────────────────────────────────────
 page("services", "Our Services | All Sorted Fencing &amp; Landscaping",
@@ -598,17 +624,6 @@ page("faq", "FAQ | All Sorted Fencing &amp; Landscaping", "Answers to common que
 page("contact", "Contact Us | All Sorted Fencing &amp; Landscaping",
      "Get a free quote for fencing, landscaping, paving, painting, exterior cleaning or garden care anywhere in Dublin.",
      page_hero("Contact Us", "Send us a few details and we will come back to you to arrange a free site visit.", "fence-5.jpg") + f'''
-<section class="contact"><div class="wrap">
-  <div class="reveal">
-    <span class="eyebrow">Free quote</span>
-    <h2>Let's get it sorted.</h2>
-    <dl>
-      <div><dt>Phone</dt><dd><a data-phone href="contact.html">Add phone number</a></dd></div>
-      <div><dt>Email</dt><dd><a data-email href="contact.html">Add email address</a></dd></div>
-      <div><dt>Based in</dt><dd>Dublin, Ireland</dd></div>
-    </dl>
-  </div>
-  {FORM}
-</div></section>''', cta=False)
+{CONTACT}''', cta=False)
 
 print("built", len(list(OUT.glob("*.html"))), "pages")

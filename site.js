@@ -1,11 +1,5 @@
-// ── Business details: fill these in ─────────────────────────────
-const PHONE = "";   // e.g. "+353 1 234 5678"
-const EMAIL = "";   // e.g. "info@allsortedfencing.ie"
-// ────────────────────────────────────────────────────────────────
 
 const root = document.documentElement;
-if (PHONE) document.querySelectorAll('[data-phone]').forEach(a => { a.textContent = PHONE; a.href = 'tel:' + PHONE.replace(/[^+\d]/g, ''); });
-if (EMAIL) document.querySelectorAll('[data-email]').forEach(a => { a.textContent = EMAIL; a.href = 'mailto:' + EMAIL; });
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 // Header + menus
@@ -100,11 +94,20 @@ lb.addEventListener('touchend', e => {
   else if (dy > 90 && Math.abs(dy) > Math.abs(dx)) lbClose();
 });
 
-// Quote form
+// Quote form: sent through Web3Forms to the business email, no page reload
 const form = document.getElementById('form');
-if (form) form.addEventListener('submit', e => {
+if (form) form.addEventListener('submit', async e => {
   e.preventDefault();
-  const d = new FormData(form);
-  const body = `Name: ${d.get('name')}\nPhone: ${d.get('phone')}\nArea: ${d.get('area')}\nService: ${d.get('service')}\n\n${d.get('message')}`;
-  location.href = `mailto:${EMAIL}?subject=${encodeURIComponent('Quote request – ' + d.get('service'))}&body=${encodeURIComponent(body)}`;
+  const btn = form.querySelector('button[type=submit]'), status = form.querySelector('.form-status');
+  btn.disabled = true; btn.textContent = 'Sending…'; status.className = 'form-status'; status.textContent = '';
+  try {
+    const res = await fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
+    const data = await res.json();
+    if (!res.ok || !data.success) throw new Error(data.message || 'Send failed');
+    form.reset(); status.classList.add('ok');
+    status.textContent = "Thanks — your request has been sent. We'll be in touch soon.";
+  } catch (err) {
+    status.classList.add('err');
+    status.innerHTML = 'Sorry, that didn\'t send. Please call <a href="tel:+353874972416">+353 87 497 2416</a> or email <a href="mailto:allsortedfencingandlandscaping@gmail.com">allsortedfencingandlandscaping@gmail.com</a>.';
+  } finally { btn.disabled = false; btn.textContent = 'Send my request'; }
 });
