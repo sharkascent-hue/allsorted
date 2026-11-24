@@ -467,7 +467,7 @@ page("index", "All Sorted Fencing &amp; Landscaping | Dublin",
     <h1>Your home &amp; garden,<br><em>all sorted.</em></h1>
     <p>Fencing, landscaping, paving, painting, exterior cleaning and garden care across Dublin — done properly and finished cleanly.</p>
     <div class="hero-cta">
-      <a href="contact.html" class="btn btn-primary">Get my free quote</a>
+      <a href="#quote" class="btn btn-primary">Get my free quote</a>
       <a href="our-work.html" class="btn btn-ghost">See our work</a>
     </div>
   </div>
@@ -475,6 +475,8 @@ page("index", "All Sorted Fencing &amp; Landscaping | Dublin",
 <div class="strip"><div class="wrap">
   <span>Dublin-based team</span><span>Free on-site quotes</span><span>Six services, one call</span><span>Tidy site, every time</span>
 </div></div>
+<div id="quote"></div>
+{CONTACT}
 <section><div class="wrap">
   {head("What we do", "Everything outside<br>your front door.", "One team for the boundary, the garden and the outside of the house.", ("services.html", "All services"))}
   {svc_grid()}
@@ -490,9 +492,7 @@ page("index", "All Sorted Fencing &amp; Landscaping | Dublin",
 <section class="process"><div class="wrap">
   {head("From the blog", "Advice before you buy.", "", ("blog.html", "All articles"))}
   {post_cards(POSTS[:3])}
-</div></section>
-<div id="quote"></div>
-{CONTACT}''', cta=False)
+</div></section>''', cta=False)
 
 # ── Services overview ───────────────────────────────────────────
 page("services", "Our Services | All Sorted Fencing &amp; Landscaping",
