@@ -446,3 +446,26 @@ a.card{color:inherit}
 .foot-contact{width:100%;display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:6px;color:rgba(255,255,255,.85)}
 .foot-contact a{word-break:break-word}
 button[disabled]{opacity:.7;cursor:wait}
+
+/* v10: quote form inside the home hero */
+.hero.with-form{text-align:left;padding:56px 0 90px;min-height:calc(100svh - var(--navh))}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}
+.hero.with-form h1{font-size:clamp(2.4rem,5.2vw,4.25rem)}
+.hero.with-form .hero-copy>p{margin:20px 0 0}
+.hero.with-form .hero-cta{justify-content:flex-start}
+.hero-pills{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.hero-pills li{padding:9px 16px;border-radius:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(8px);font-size:.92rem;color:rgba(255,255,255,.88)}
+.hero-pills b{color:#fff;font-weight:500;font-size:1.02rem;margin-right:4px}
+.hero-form form{padding:26px 28px;gap:12px;box-shadow:0 30px 70px -25px rgba(0,0,0,.75)}
+.hero-form form h3{font-size:1.4rem}
+.hero-form textarea{min-height:84px}
+.hero-form input,.hero-form select,.hero-form textarea{padding:10px 13px}
+.hero-form label{font-size:.84rem;gap:4px}
+@media (max-width:960px){
+  .hero.with-form{min-height:0;padding:40px 0 80px;text-align:center}
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero.with-form .hero-copy>p{margin:16px auto 0}
+  .hero-pills,.hero.with-form .hero-cta{justify-content:center}
+  .hero-form{max-width:560px;width:100%;margin:0 auto;text-align:left}
+}
+@media (max-width:560px){.hero-form form{padding:22px 18px}.hero.with-form .hero-cta .btn{flex:1 1 100%}}

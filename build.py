@@ -458,25 +458,25 @@ CONTACT = f'''<section class="contact"><div class="wrap">
 # ── Home ────────────────────────────────────────────────────────
 page("index", "All Sorted Fencing &amp; Landscaping | Dublin",
      "Dublin-based fencing, landscaping, paving, painting, exterior cleaning and garden care. Free quotes across Dublin.",
-     f'''<section class="hero">
+     f'''<section class="hero with-form">
   <video class="hero-bg" id="heroVideo" autoplay muted loop playsinline preload="none" aria-label="Fencing and paving by All Sorted"></video>
   <script>(function(){{var v=document.getElementById('heroVideo'),t=matchMedia('(max-width:760px) and (orientation:portrait)').matches?'tall':'wide';v.poster='img/hero-'+t+'.jpg';v.src='img/hero-'+t+'.mp4';}})();</script>
-  <div class="chip l"><b>Dublin</b><span>based &amp; local</span></div>
-  <div class="chip r"><b>Free</b><span>no-obligation quotes</span></div>
-  <div class="wrap">
-    <h1>Your home &amp; garden,<br><em>all sorted.</em></h1>
-    <p>Fencing, landscaping, paving, painting, exterior cleaning and garden care across Dublin — done properly and finished cleanly.</p>
-    <div class="hero-cta">
-      <a href="#quote" class="btn btn-primary">Get my free quote</a>
-      <a href="our-work.html" class="btn btn-ghost">See our work</a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>Your home &amp; garden,<br><em>all sorted.</em></h1>
+      <p>Fencing, landscaping, paving, painting, exterior cleaning and garden care across Dublin — done properly and finished cleanly.</p>
+      <ul class="hero-pills"><li><b>Dublin</b> based &amp; local</li><li><b>Free</b> no-obligation quotes</li></ul>
+      <div class="hero-cta">
+        <a href="tel:{PHONE_TEL}" class="btn btn-primary">Call {PHONE}</a>
+        <a href="our-work.html" class="btn btn-ghost">See our work</a>
+      </div>
     </div>
+    <div class="hero-form" id="quote">{FORM.replace('class="reveal" ', '').replace('<h3>Request a quote</h3>', '<h3>Get your free quote</h3>')}</div>
   </div>
 </section>
 <div class="strip"><div class="wrap">
   <span>Dublin-based team</span><span>Free on-site quotes</span><span>Six services, one call</span><span>Tidy site, every time</span>
 </div></div>
-<div id="quote"></div>
-{CONTACT}
 <section><div class="wrap">
   {head("What we do", "Everything outside<br>your front door.", "One team for the boundary, the garden and the outside of the house.", ("services.html", "All services"))}
   {svc_grid()}
