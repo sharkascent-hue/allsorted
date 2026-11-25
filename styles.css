@@ -499,3 +499,27 @@ button[disabled]{opacity:.7;cursor:wait}
 @keyframes shine{to{transform:translateX(120%)}}
 html.first .intro-logo{background:radial-gradient(circle at 50% 45%,#5E3015 0%,#3B1E0D 70%)}
 html.first .slats i{background:#3B1E0D}
+
+/* v12: phone fit — badge sits fully inside the header, compact hero so the form is in reach */
+@media (max-width:1120px){
+  .nav .brand{align-self:center;padding-top:0;gap:10px}
+  .brand img.brand-badge,.nav.scrolled .brand img.brand-badge{width:60px;height:60px;margin:0;filter:drop-shadow(0 4px 8px rgba(59,30,13,.35))}
+  .brand-name,.nav.scrolled .brand-name{margin-top:0}
+}
+@media (max-width:560px){
+  .brand-name{font-size:1.1rem}.brand-name small{font-size:.56rem;letter-spacing:.12em;margin-top:3px}
+  .brand img.brand-badge,.nav.scrolled .brand img.brand-badge{width:54px;height:54px}
+  .hero.with-form{padding:26px 0 70px}
+  .hero.with-form h1{font-size:clamp(2rem,9.2vw,2.5rem)}
+  .hero.with-form .hero-copy>p{font-size:.98rem;margin-top:12px}
+  .hero-pills{flex-wrap:nowrap;gap:8px;margin-top:16px}
+  .hero-pills li{padding:7px 10px;font-size:.78rem;white-space:nowrap;border-radius:12px}
+  .hero-pills b{font-size:.86rem;margin-right:2px}
+  .hero.with-form .hero-cta{flex-wrap:nowrap;gap:10px;margin-top:18px}
+  .hero.with-form .hero-cta .btn{flex:1 1 0;min-width:0;padding:12px 10px;font-size:.92rem;white-space:nowrap}
+  .hero-grid{gap:22px}
+}
+@media (max-width:370px){.hero-pills li{font-size:.72rem;padding:6px 8px}.hero.with-form .hero-cta .btn{font-size:.84rem}}
+.btn .short{display:none}
+@media (max-width:560px){.hero.with-form .btn .full{display:none}.hero.with-form .btn .short{display:inline}}
+@media (max-width:560px){table{min-width:0}th,td{padding:11px 8px;font-size:.8rem;line-height:1.35}thead th{font-size:.82rem}}

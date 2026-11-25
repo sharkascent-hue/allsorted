@@ -467,7 +467,7 @@ page("index", "All Sorted Fencing &amp; Landscaping | Dublin",
       <p>Fencing, landscaping, paving, painting, exterior cleaning and garden care across Dublin — done properly and finished cleanly.</p>
       <ul class="hero-pills"><li><b>Dublin</b> based &amp; local</li><li><b>Free</b> no-obligation quotes</li></ul>
       <div class="hero-cta">
-        <a href="tel:{PHONE_TEL}" class="btn btn-primary">Call {PHONE}</a>
+        <a href="tel:{PHONE_TEL}" class="btn btn-primary"><span class="full">Call {PHONE}</span><span class="short">Call us</span></a>
         <a href="our-work.html" class="btn btn-ghost">See our work</a>
       </div>
     </div>
