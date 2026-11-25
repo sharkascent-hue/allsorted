@@ -164,11 +164,11 @@ def page(slug, title, desc, body, cta=True):
 <body>
 <div class="intro" aria-hidden="true">
   <div class="slats">{slats}</div>
-  <div class="intro-logo"><div class="lock"><img class="mark" src="img/logo-mark.png" alt=""><img class="word" src="img/logo-word.png" alt=""></div><span class="line"></span></div>
+  <div class="intro-logo"><div class="badge-wrap"><img class="badge" src="img/logo-badge.png" alt="" width="520" height="520"><span class="shine"></span></div><span class="line"></span></div>
 </div>
 <header class="nav" id="nav">
   <div class="wrap">
-    <a href="index.html" class="brand" aria-label="{NAME} home"><img src="img/logo.png" alt="{NAME}" width="700" height="201"></a>
+    <a href="index.html" class="brand" aria-label="{NAME} home"><img class="brand-badge" src="img/logo-badge-sm.png" alt="" width="200" height="200"><span class="brand-name">All Sorted<small>Fencing &amp; Landscaping</small></span></a>
     <ul id="menu">{nav_html(slug)}</ul>
     <a href="contact.html" class="btn btn-primary">Contact us</a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
@@ -180,7 +180,7 @@ def page(slug, title, desc, body, cta=True):
 </main>
 <footer>
   <div class="wrap">
-    <a href="index.html" class="brand foot"><img src="img/logo.png" alt="{NAME}" width="700" height="201" loading="lazy"></a>
+    <a href="index.html" class="brand foot" aria-label="{NAME} home"><img src="img/logo-badge-sm.png" alt="{NAME}" width="200" height="200" loading="lazy"></a>
     <nav aria-label="Footer">{foot}</nav>
     <p class="foot-contact"><a href="tel:{PHONE_TEL}">{PHONE}</a><a href="mailto:{EMAIL}">{EMAIL}</a><span>Dublin, Ireland</span></p>
     <p class="copy">© <span id="yr"></span> {NAME}</p>

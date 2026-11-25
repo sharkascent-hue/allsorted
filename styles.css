@@ -469,3 +469,33 @@ button[disabled]{opacity:.7;cursor:wait}
   .hero-form{max-width:560px;width:100%;margin:0 auto;text-align:left}
 }
 @media (max-width:560px){.hero-form form{padding:22px 18px}.hero.with-form .hero-cta .btn{flex:1 1 100%}}
+
+/* v11: round gold badge logo */
+.nav .brand{position:relative;align-self:flex-start;gap:14px;padding-top:6px;color:var(--emerald-ink)}
+.brand img.brand-badge{width:104px;height:104px;margin-bottom:-24px;border-radius:50%;filter:drop-shadow(0 10px 18px rgba(59,30,13,.45));transition:transform .35s cubic-bezier(.2,.8,.3,1.3)}
+.brand:hover img.brand-badge{transform:rotate(-6deg) scale(1.04)}
+.brand-name{display:flex;flex-direction:column;font-size:1.45rem;font-weight:600;letter-spacing:-.01em;line-height:1.05;margin-top:18px;color:var(--emerald-deep)}
+.brand-name small{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--emerald);margin-top:5px}
+.nav.scrolled .brand img.brand-badge{width:76px;height:76px;margin-bottom:0}
+.nav.scrolled .brand-name{margin-top:12px}
+.nav .brand img.brand-badge{transition:width .3s ease,height .3s ease,margin .3s ease,transform .35s cubic-bezier(.2,.8,.3,1.3)}
+@media (max-width:1120px){
+  .brand img.brand-badge,.nav.scrolled .brand img.brand-badge{width:80px;height:80px;margin-bottom:-18px}
+  .nav.scrolled .brand img.brand-badge{width:62px;height:62px;margin-bottom:0}
+  .brand-name{margin-top:14px;font-size:1.3rem}
+  .nav.scrolled .brand-name{margin-top:10px}
+}
+@media (max-width:420px){
+  .brand img.brand-badge{width:70px;height:70px;margin-bottom:-16px}
+  .brand-name{font-size:1.12rem}.brand-name small{font-size:.58rem;letter-spacing:.14em}
+}
+.brand.foot{background:none;padding:0;border-radius:0}
+.brand.foot img{height:120px;width:120px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.45))}
+/* intro: badge spins in, a light sweeps across, then the fence slats lift */
+.badge-wrap{position:relative;width:min(300px,62vw);aspect-ratio:1;border-radius:50%;overflow:hidden;animation:badgeIn .9s cubic-bezier(.2,.9,.3,1.2) .1s both;filter:drop-shadow(0 24px 40px rgba(59,30,13,.4))}
+.badge-wrap .badge{width:100%;height:100%;display:block}
+.badge-wrap .shine{position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,240,200,.75) 50%,transparent 65%);transform:translateX(-120%);animation:shine .9s ease .85s both}
+@keyframes badgeIn{from{opacity:0;transform:scale(.55) rotate(-25deg)}}
+@keyframes shine{to{transform:translateX(120%)}}
+html.first .intro-logo{background:radial-gradient(circle at 50% 45%,#5E3015 0%,#3B1E0D 70%)}
+html.first .slats i{background:#3B1E0D}
